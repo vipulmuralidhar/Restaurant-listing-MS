@@ -27,7 +27,7 @@ pipeline {
 
     stage('SonarQube Analysis') {
   steps {
-    sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=http://44.210.102.62:9000/ -Dsonar.login=squ_6fbd1b2b775c5c01895318b1e0b7e17689e5c4ca'
+    sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.host.url=http://44.222.117.228:9000/ -Dsonar.login=squ_70765509016698a55649f089d67a3832c996dede'
   }
 }
 
@@ -35,8 +35,8 @@ pipeline {
    stage('Check code coverage') {
             steps {
                 script {
-                    def token = "squ_6fbd1b2b775c5c01895318b1e0b7e17689e5c4ca"
-                    def sonarQubeUrl = "http://44.210.102.62:9000/api"
+                    def token = "squ_70765509016698a55649f089d67a3832c996dede"
+                    def sonarQubeUrl = "http://44.222.117.228:9000/api"
                     def componentKey = "com.vipsfoodcourt:restaurantlisting"
                     def coverageThreshold = 10.0
 
